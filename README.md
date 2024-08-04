@@ -1,1 +1,1 @@
-Created a webpage which allows users to rent appliances, gym equipment's, furniture on a monthly basis using HTML, CSS, SERVLET, JAVA SCRIPT. Project Functionality: User registration, Product Catalog, Product listing, Booking and Checkout, Customer Support.
+Created a webpage which allows users to rent appliances, gym equipment's, furniture on a monthly basis using HTML, CSS, SERVLET, JAVA SCRIPT.
