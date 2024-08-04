@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>QUANTITY NOT AVAILABLE</title>
+        <link rel="icon" href="IMAGE/warning.png" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="time()">
+    <center>
+        <h1 style="color: red; margin-top: 10%">REQUESTED QUANTITY NOT AVAILABLE</h1>
+    </center>
+</body>
+<script>
+    let timeout;
+
+    function time() {
+        timeout = setTimeout(alertFunc, 1200);
+    }
+
+    function alertFunc() {
+        history.back();
+    }
+</script>
+</html>

@@ -1,0 +1,280 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 Oct, 2023, 10:56:36 AM
+    Author     : atrib
+*/
+
+body{
+    background: #ddd3;
+    height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    font-family: Muli;
+    font-size: 14px;    
+}
+.card{
+    margin: auto;
+    width: 80%;
+    max-width:90%;
+    padding: 4vh 0;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 3px solid rgb(252, 103, 49);
+    border-bottom: 3px solid rgb(252, 103, 49);
+    border-left: none;
+    border-right: none;
+}
+@media(max-width:768px){
+    .card{
+        width: 90%;
+    }
+}
+.title{
+    color: rgb(252, 103, 49);
+    font-weight: 600;
+    margin-bottom: 2vh;
+    padding: 0 8%;
+    font-size: 30px;
+}
+.col-0{
+    float: right;
+    width: 25%;
+    height: 25%;
+    margin-top: -20%;
+}
+#details{
+    font-weight: 400;
+}
+.info{
+    padding: 5% 8%;
+}
+.info .col-5{
+    padding: 0;
+}
+#heading{
+    color: green;
+    line-height: 6vh;
+}
+.pricing{
+    background-color: #ddd3;
+    padding: 2vh 8%;
+    font-weight: 400;
+    line-height: 2.5;
+}
+.pricing .col-3{
+    padding: 0;
+}
+.total{
+    padding: 2vh 8%;
+    color: rgb(252, 103, 49);
+    font-weight: bold;
+}
+.total .col-3{
+    padding: 0;
+}
+.footer{
+    padding: 0 8%;
+    font-size: x-small;
+    color: black;
+}
+.footer img{
+    height: 5vh;
+}
+.footer a{
+    color: rgb(252, 103, 49);
+}
+.footer .col-10, .col-2{
+    display: flex;
+    padding: 3vh 0 0;
+    align-items: center;
+}
+.footer .row{
+    margin: 0;
+}
+#progressbar {
+    margin-bottom: 3vh;
+    overflow: hidden;
+    color: rgb(252, 103, 49);
+    padding-left: 0px;
+    margin-top: 3vh
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: x-small;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+    color: rgb(160, 159, 159);
+}
+
+#progressbar #step1:before {
+    content: "";
+    color: rgb(252, 103, 49);
+    width: 5px;
+    height: 5px;
+    margin-left: 0px !important;
+    /* padding-left: 11px !important */
+}
+
+#progressbar #step2:before {
+    content: "";
+    color: #fff;
+    width: 5px;
+    height: 5px;
+    margin-left: 32%;
+}
+
+#progressbar #step3:before {
+    content: "";
+    color: #fff;
+    width: 5px;
+    height: 5px;
+    margin-right: 32% ; 
+    /* padding-right: 11px !important */
+}
+
+#progressbar #step4:before {
+    content: "";
+    color: #fff;
+    width: 5px;
+    height: 5px;
+    margin-right: 0px !important;
+    /* padding-right: 11px !important */
+}
+
+#progressbar li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    margin: auto;
+    z-index: -1;
+    margin-bottom: 1vh;
+}
+
+#progressbar li:after {
+    content: '';
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-bottom: 2vh;
+    top: 1px;
+    z-index: 1;
+}
+.progress-track{
+    padding: 0 8%;
+}
+#progressbar li:nth-child(2):after {
+    margin-right: auto;
+}
+
+#progressbar li:nth-child(1):after {
+    margin: auto;
+}
+
+#progressbar li:nth-child(3):after {
+    float: left;
+    width: 68%;
+}
+#progressbar li:nth-child(4):after {
+    margin-left: auto;
+    width: 132%;
+}
+
+#progressbar  li.active{
+    color: black;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: rgb(252, 103, 49);
+}
+.invoice{
+    float: right;
+    margin-top: -5%;
+}
+#invoice{
+    padding: 9px;
+    outline: none;
+    border: none;
+    background-color: #0583CE;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#invoice:hover{
+    padding: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 5px 2px gray;
+    background-color: #0583CE;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#bttn{
+    padding: 9px;
+    outline: none;
+    border: none;
+    background-color: #0583CE;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#bttn:hover{
+    padding: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 5px 2px gray;
+    background-color: #0583CE;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.navbar{
+    background-color: skyblue;
+    height: 60px;
+    width: 100%;
+}
+#bak{
+
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+#back{
+    float: right;
+    padding: 3px;
+    border: none;
+    font-size: 17px;
+    margin-right: 30px;
+    border-radius: 10px;
+    width: 10%;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+#back:hover{
+    float: right;
+    padding: 3px;
+    border: none;
+    font-size: 17px;
+    margin-right: 30px;
+    border-radius: 10px;
+    width: 10%;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px darkblue;
+    background-color: rgb(2, 2, 163);
+    color: white;
+}
+.me-2{
+    margin-bottom: -8px;
+    margin-top: -20px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Not Found</title>
+        <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+    </head>
+    <body onload="time()">
+    <center>
+        <div style="font-size: 30px;margin-top: 20ch;">
+            <p style="font-size: 35px;color: red">
+                <b>This Email Is Not Registered In Our Database !!</b>
+            </p>
+            <p style="color: green">
+                Please Create A New Account With This Email !!<span style='font-size:30px;'>&#128519;</span>
+            </p>
+        </div>
+    </center>
+</body>
+<script>
+    let timeout;
+
+    function time() {
+        timeout = setTimeout(alertFunc, 2000);
+    }
+
+    function alertFunc() {
+        window.location.href = "index.html";
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVALID LOGIN</title>
+    <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+</head>
+<body onload="time()">
+    <center>
+        <h1 style="color: red; margin-top: 10%">Please Enter A Valid Email And Password!! Try Again With Correct Data! </h1>
+</center>
+</body>
+<script>
+    let timeout;
+
+function time() {
+  timeout = setTimeout(alertFunc, 2000);
+}
+
+function alertFunc() {
+  window.location.href="main_index.jsp";
+}
+</script>
+</html>

@@ -1,0 +1,244 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.ani {
+  /* border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden; */
+  animation: fadeInUp 2s ease;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+/* 
+.hidden {
+  opacity:0;
+} */
+.console-container {
+ 
+  font-family:Khula;
+  font-size:5ch;
+  text-align:center;
+  height:55px;
+  width:auto;
+  display:block;
+  position:relative;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:1px;
+}
+
+@keyframes fadeInUp{
+  0%{
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* Welcome Text Start Here*/
+
+.anif {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/6963bbf342d87b3a2150bd8f59682b89.jpg);
+  -webkit-background-clip: text;
+  background-size: contain;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+  font-weight: 700;
+}
+.anif::before {
+  content: attr(data-heading);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  mix-blend-mode: screen;
+  animation: shine 1s infinite;
+  background-size: 200%;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), -2px 2px 10px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(0, 0, 0, 0.2);
+}
+@keyframes shine {
+  0% {
+    background-position: -100%;
+ }
+  100% {
+    background-position: 100%;
+ }
+}
+/* Not needed for demo */
+@font-face {
+  font-family: 'frozen';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
+}
+
+.anif {
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  font-size: 30px;
+  margin: 0;
+  font-family: 'frozen', serif;
+  font-weight: 700;
+}
+
+
+/* Welcome Text End Here*/
+
+/*Co-Founders text*/
+#Co-Founders{
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  min-height: calc(1vh - 1px);
+  background: white;
+  position: relative;
+  background: #ffffff;
+  color: #e7e4e486;
+}
+
+#Co-Founders:before{
+  content: attr(data-text);
+  position: absolute;
+  background: linear-gradient(#f70000, #f89200, #f8f501, #038f00,#0168f8, #a200f7);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 100% 90%;
+  line-height: 0.9;
+  clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  animation: swing 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes swing{
+  0%{
+     -webkit-clip-path: ellipse(120px 120px at -2.54% -9.25%);
+      clip-path: ellipse(120px 120px at -2.54% -9.25%)
+  }
+  50%{
+    -webkit-clip-path: ellipse(120px 120px at 49.66% 64.36%);
+    clip-path: ellipse(120px 120px at 49.66% 64.36%);
+
+  }
+  100%{
+     -webkit-clip-path: ellipse(120px 120px at 102.62% -1.61%);
+    clip-path: ellipse(120px 120px at 102.62% -1.61%);
+  }
+}
+/* end of Co-Founders text*/
+footer {
+  background-color: #1f3564;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  outline: 0;
+  padding: 1px;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 35px;
+}
+
+.card {
+  animation: fadeInRight 2s ease;
+  box-shadow: 2px 2px 4px black;
+  margin: 8px;
+  /* padding: 10px; */
+}
+
+@keyframes fadeInRight{
+  0%{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.about-section {
+  text-align: center;
+  color: white;
+  /* background-image: url("https://drive.google.com/uc?export=download&id=1nkoyBKukezu1xnv3SLMgCXSY0b3LjTvx"); */
+}
+
+.back {
+  background-color: #1f3564c4;
+  padding: 15px;
+  top: 20px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.con {
+
+  background-color: #1f3564;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  /* padding: 8px; */
+}
+
+/* .con:hover {
+    
+  } */
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}

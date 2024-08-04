@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Benifits</title>
+        <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+        <style>
+            /* Reset some default styles for better consistency */
+            body,
+            h1,
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            /* Header styles */
+            header {
+                background-color: #007bff;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                position: relative;
+            }
+
+            /* Container styles */
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Main content styles */
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+
+
+            }
+
+            /* Responsive styles */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 10px;
+                }
+                img{
+
+                    display: none;
+
+                }
+            }
+
+            img {
+                text-align: left;
+
+                position: absolute;
+                left: 50px;
+                background: none;
+            }
+            #box{
+                margin-left: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div onclick="goToHome()" style="cursor: pointer">
+                <img src="IMAGE/Logo/LogoWithNameFinalTransparent.png" style="width: 170px; height: 40px; margin-left: 40px" alt="">
+                <img src="IMAGE/Logo/Small Transparent.png" style="width: 60px; height: 50px; margin-left: -20px" alt="">
+
+            </div>
+            <h1>Our Benifits</h1>
+        </header>
+        <div class="container">
+            <h1><u>Introduction</u></h1>
+            <h3>For Customers :</h3>
+            <p id="box">
+
+                <b>Cost-Effective :</b>Renting furniture can be more affordable than buying new furniture, especially for
+                people who frequently move or have temporary living arrangements.
+            </p>
+            <br>
+            <p id="box"><b>Flexibility :</b> Renting allows customers to change their furniture as needed, adapting to changing
+                circumstances, styles, or preferences without the long-term commitment of ownership.</p>
+            <br>
+            <p id="box"><b>Quality and Variety :</b> Furniture rental websites often offer a wide range of high-quality furniture
+                options, allowing customers to access premium pieces they might not be able to afford otherwise.</p>
+            <br>
+            <p id="box"><b>Convenience :</b> Customers can browse and select furniture online, making the process convenient and
+                time-saving. Delivery, assembly, and pickup services are often provided, further enhancing convenience.</p>
+            <br>
+            <p id="box"><b>No Maintenance Hassles :</b> Renters don't have to worry about the maintenance and repair of furniture, as
+                it is the responsibility of the rental company.</p>
+            <br>
+            <p id="box"><b>Sustainability :</b> Renting furniture can be more environmentally friendly than buying new items that may
+                be discarded after a short period. It reduces waste and promotes the reuse of furniture.</p>
+            <br>
+            <p id="box"><b>Try Before You Buy :</b> Some rental services offer the option to try out furniture before committing to
+                purchasing it, allowing customers to make more informed decisions.</p>
+            <br>
+            <p id="box"><b>Budget-Friendly :</b> Furniture rentals are suitable for people on a budget who want to furnish their homes
+                with stylish and functional pieces without breaking the bank.</p>
+
+
+
+            <h1><u>Contact Us</u></h1>
+            <p id="box">If you have any questions about this privacy policy, please contact us at <a
+                    href="mailto:contact@example.com">rentkaro@gmail.com</a> . OR <span><a href="http://localhost:8080/RENT_KARO/contact_us.html" style="text-decoration: none;color: #09841B"><b>Click Here</b>.</a></span></p>
+        </div>
+    </body>
+    <script>
+        function goToHome() {
+            history.go(-1);
+        }
+    </script>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+
+        <head>
+            <title>Sign Up</title>
+            <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta charset="utf-8" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link rel="stylesheet" type="text/css" href="CSS/signup_style.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+            <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" rel="stylesheet" type="text/css" />
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+                  integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+            <style>
+                .profile_photo{
+                    display: inline-block;
+                    color: white;
+                    width: 90%;
+                    line-height: 2.2em;
+                    padding: 0 0.62em;
+                    border: 1px solid #666;
+                    border-radius: 8px;
+                    background-color: navy;
+                    box-shadow: inset 0 0 0.1em #fff, 0.2em 0.2em 0.2em rgba( 0, 0, 0, 0.3 );
+                    font-family: arial, sans-serif;
+                    font-size: 0.8em;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+
+                .profile_photo:hover {
+                    border-color: #3c7fb1;
+                    color: black;
+                    background-image: linear-gradient( to bottom, #fff, #a9dbf6 );
+                }
+            </style>
+        </head>
+
+        <body class="body">
+
+
+            <div class="login-page">
+                <div class="form">
+                    <form method="POST" action="http://localhost:8080/RENT_KARO/signup" enctype="multipart/form-data">
+                        <img id="preview"  src="IMAGE/add.gif" style="justify-content: center;width:70%;margin-bottom: 30px; border-radius: 100px">
+                        
+
+                        <input type="file" id="fileInput" style="display: none" name="db_image" accept="image/png,image/jpg, image/jpeg" onchange="previewImage(event)">
+                        <label class="profile_photo" for="fileInput">UPLOAD PROFILE IMAGE</label>
+                        <input type="text" id="name" name="db_name" placeholder="Full Name" required>
+                        <input type="email" id="email" name="db_email" placeholder="Email Address" required>
+                        <input type="number" id="phnumber" name="db_phnumber" placeholder="Enter Your Number" oninput="validatePhoneNumber()" required>
+                        <div id="message">
+                            <h3 style="font-size: 15px">Password Must Contain The Following :</h3>
+                            <p id="letter" class="invalid">A <b>Small (Lowercase)</b> Letter [a-z]</p>
+                            <p id="capital" class="invalid">A <b>Capital (Uppercase)</b> Letter [A-Z]</p>
+                            <p id="number" class="invalid">A <b>Number </b>[0-9]</p>
+                            <p id="length" class="invalid">Minimum <b>8 Characters</b></p>
+                        </div>
+                        <p id="showErrorPhno" style="font-style: oblique; color: red; margin-top: 1px;"> </p>
+                        <input type="password" id="password" name="db_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password" required>
+                        <input type="password" id="confirm_password" name="db_confirm_password" placeholder="Confirm Password" oninput="validateConfirmPassword()" required>
+                        <p id="showErrorPwd" style="font-style: oblique; color: red; margin-top: 1px;"> </p>
+
+
+                        <i style="cursor: pointer" class="fas fa-eye" id="togglePassword"></i>
+
+                        <br>
+                        <br>
+                        <br>
+                        <span><input type="checkbox" id="tc" style="width: 17px;height: 17px" name="chkterms" onclick="sighupenable(this)"> 
+                            I Have Read And Agree To The <a style="text-decoration: none" href="http://localhost:8080/RENT_KARO/privacy%20policy.html"><b>Privacy Policy</b></a> 
+                            & <a style="text-decoration: none" href="http://localhost:8080/RENT_KARO/renatl%20tc.html"><b>Terms And Conditions</b></a></span>
+                        <br>
+                        <br>
+                        <button type="submit" name="bSubmit" disabled id="bSubmit">
+                            SIGN UP
+                        </button>
+                        <br>
+
+                        <button type="reset" name="bReset" id="bReset"><i class="fa fa-refresh"></i> Reset</button>
+                        <button type="button" name="bClose" id="bClose" onclick="location.href = 'main_index.jsp';"><i class="fa fa-arrow-left"></i> Back</button>
+                    </form>
+                </div>
+            </div>
+        </body>
+
+
+
+
+        <script>
+
+            function previewImage(event) {
+                var input = event.target;
+                var image = document.getElementById('preview');
+                var UploadFieldID = "fileInput";
+                var MaxSizeInBytes = 16177215;
+                var fld = document.getElementById(UploadFieldID);
+                if (fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes)
+                {
+                    alert("The file size must be no more than " + parseInt(MaxSizeInBytes / 1024 / 1024) + "MB");
+                    
+                } else {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            image.src = e.target.result;
+                            image.style.width = "150px";
+                            image.style.height = "150px";
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            }
+            function sighupenable(checkbox)
+            {
+                if (checkbox.checked)
+                    document.getElementById("bSubmit").disabled = false;
+                else
+                    document.getElementById("bSubmit").disabled = true;
+            }
+            function validatePhoneNumber() {
+                let phno = document.getElementById("phnumber").value;
+
+                if (phno.length != 10) {
+                    document.getElementById("showErrorPhno").innerHTML = "Phone Number Must Be 10 Digits!!";
+                    return false;
+                } else {
+                    document.getElementById("showErrorPhno").innerHTML = "";
+                    return true;
+                }
+            }
+            function validateConfirmPassword() {
+
+                let pwd = document.getElementById("password").value;
+                let cpwd = document.getElementById("confirm_password").value;
+
+                if (cpwd != pwd) {
+                    document.getElementById("showErrorPwd").innerHTML = "Password Not Match!!!";
+                    return false;
+                } else {
+                    document.getElementById("showErrorPwd").innerHTML = "";
+                    return true;
+                }
+
+            }
+
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#password');
+            const confirm_password = document.querySelector('#confirm_password');
+
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                const type2 = confirm_password.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirm_password.setAttribute('type', type);
+                // toggle the eye slash icon
+                this.classList.toggle('fa-eye-slash');
+            });
+
+
+            var myInput = document.getElementById("password");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+            myInput.onfocus = function () {
+                document.getElementById("message").style.display = "block";
+            }
+
+// When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function () {
+                document.getElementById("message").style.display = "none";
+            }
+
+// When the user starts to type something inside the password field
+            myInput.onkeyup = function () {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if (myInput.value.match(lowerCaseLetters)) {
+                    letter.classList.remove("invalid");
+                    letter.classList.add("valid");
+                } else {
+                    letter.classList.remove("valid");
+                    letter.classList.add("invalid");
+                }
+
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if (myInput.value.match(upperCaseLetters)) {
+                    capital.classList.remove("invalid");
+                    capital.classList.add("valid");
+                } else {
+                    capital.classList.remove("valid");
+                    capital.classList.add("invalid");
+                }
+
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if (myInput.value.match(numbers)) {
+                    number.classList.remove("invalid");
+                    number.classList.add("valid");
+                } else {
+                    number.classList.remove("valid");
+                    number.classList.add("invalid");
+                }
+
+                // Validate length
+                if (myInput.value.length >= 8) {
+                    length.classList.remove("invalid");
+                    length.classList.add("valid");
+                } else {
+                    length.classList.remove("valid");
+                    length.classList.add("invalid");
+                }
+            }
+        </script>
+         
+
+    </html>
+
+</html>

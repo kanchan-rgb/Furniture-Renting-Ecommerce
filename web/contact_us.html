@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+        <link rel="stylesheet" href="CSS/CONTACT_US.css">
+    </head>
+
+    <body>
+        <form method="POST" action="http://localhost:8080/RENT_KARO/ContactUS">
+            <section>
+                <div class="container">
+                    <div class="contactInfo">
+                        <div>
+                            <h2><b>Contact Us</b></h2>
+                            <ul class="info">
+                                <li>
+                                    <span><img src="IMAGE/Contact Us Pics/location_contactUsPage.png"></span>
+                                    <span><a href="https://goo.gl/maps/ougyiwxhdEFeomx99" style="color: #ffffff;">27, Karl
+                                            Marx
+                                            Sarani Rd,<br>
+                                            Khidirpur, Kolkata, <br>
+                                            West Bengal 700023</a></span>
+                                </li>
+                                <hr>
+                                <li>
+                                    <span><img src="IMAGE/Contact Us Pics/gmail.png"></span>
+                                    <span>rentkaro@gmail.com</span>
+                                </li>
+                                <hr>
+                                <li>
+                                    <span><img src="IMAGE//Contact Us Pics/call.png"></span>
+                                    <span>44-45678911</span>
+                                </li>
+                                <hr>
+                            </ul>
+                        </div>
+                        <ul class="sci">
+                            <li><a href="https://www.facebook.com/"><img src="IMAGE//Contact Us Pics/facebook.png"></a></li>
+                            <li><a href="https://www.instagram.com/"><img src="IMAGE/Contact Us Pics/instagram.png"></a></li>
+                            <li><a href="https://twitter.com/"><img src="IMAGE/Contact Us Pics/twitter.png"></a></li>
+                            <li><a href="https://www.linkedin.com/"><img src="IMAGE/Contact Us Pics/linkedin.png"></a></li>
+                        </ul>
+                        <p><a href="about_us.html"style="color: white">About Us</a></p>
+                    </div>
+                    <div class="contactForm">
+                        <h2><b>Send a Message</b></h2>
+                        <div class="formbox">
+                            <div class="inputbox w50">
+                                <input type="text" name="c_Fname" required>
+                                <span>First Name</span>
+                            </div>
+                            <div class="inputbox w50">
+                                <input type="text" name="c_Lname" required>
+                                <span>Last Name</span>
+                            </div>
+                            <div class="inputbox w50">
+                                <input type="email" name="c_email" required>
+                                <span>E-mail Address</span>
+                            </div>
+                            <div class="inputbox w50">
+                                <input type="number" id="phnumber" maxlength="10" oninput="validatePhoneNumber()" name="c_number" required>
+                                <span>Mobile Number</span>
+                                <p id="showErrorPhno" style="font-style: oblique; color: red; margin-top: 1px;"> </p>
+                            </div>
+                            <div class="inputbox w100">
+                                <textarea name="c_text" required></textarea>
+                                <span>Write Your Message Here...</span>
+                            </div>
+                            <div class="inputbox w50">
+                                <input type="submit" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </body>
+    <script>
+        function validatePhoneNumber() {
+            let phno = document.getElementById("phnumber").value;
+
+            if (phno.length != 10) {
+                document.getElementById("showErrorPhno").innerHTML = "Phone Number Must Be 10 Digits!!";
+                return false;
+            } else {
+                document.getElementById("showErrorPhno").innerHTML = "";
+                return true;
+            }
+        }
+    </script>
+</html>

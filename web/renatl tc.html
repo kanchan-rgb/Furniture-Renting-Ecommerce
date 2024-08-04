@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TERMS & CONDITIONS</title>
+        <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+        <style>
+            /* Reset some default styles for better consistency */
+            body,
+            h1,
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            /* Header styles */
+            header {
+                background-color: #007bff;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                position: relative;
+            }
+
+            /* Container styles */
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Main content styles */
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+
+
+            }
+
+            /* Responsive styles */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 10px;
+                }
+                img{
+
+                    display: none;
+
+                }
+
+            }
+
+            img {
+                text-align: left;
+
+                position: absolute;
+                left: 2%;
+                background: none;
+            }
+            #box{
+                margin-left: 30px;
+            }
+            #box2{
+                margin-left: 55px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div onclick="goToHome()" style="cursor: pointer">
+                <img src="IMAGE/Logo/LogoWithNameFinalTransparent.png" style="width: 170px; height: 40px; margin-left: 40px" alt="">
+                <img src="IMAGE/Logo/Small Transparent.png" style="width: 60px; height: 50px; margin-left: -20px" alt="">
+
+            </div>
+            <h1>RENTAL TERMS AND CONDITIONS</h1>
+        </header>
+        <div class="container">
+            <h1>Introduction</h1>
+            <h3>1. Acceptance of Terms and Conditions</h3>
+            <p id="box">By accessing or using our rental services, you agree to comply with and be bound by these Rental
+                Terms and Conditions. If you do not agree with any part of these terms, please do not use our rental
+                services.</p>
+
+            <h3>2. Rental Agreement</h3>
+            <p id="box">All rentals are subject to a separate Rental Agreement, which must be signed by the renter and the
+                rental provider. The terms and conditions outlined here are supplementary to the Rental Agreement
+                and should be read in conjunction with it.</p>
+
+            <h3>3. Booking and Reservation</h3>
+            <p id="box"><b>3.1.  Reservation Process : </b>To reserve a rental, you must provide accurate information, including
+                personal details, rental dates, and payment information. <br>
+
+                <b>3.2. Payment :</b> A deposit or full payment may be required to secure a reservation. Payment methods
+                accepted will be specified in the Rental Agreement. <br>
+
+                <b>3.3. Cancellation : </b>Cancellation policies, including fees and refund details, will be outlined in the
+                Rental Agreement.</p>
+
+            <h3>4. Rental Period</h3>
+            <p id="box"><b>4.1. Start and End :</b> The rental period starts and ends at the times specified in the Rental Agreement.
+                <br>
+
+                <b>4.2. Extensions : </b> Extensions to the rental period must be approved by the rental provider and may be
+                subject to additional fees.</p>
+
+            <h3>5. Security Deposit</h3>
+            <p id="box"><b>5.1.  Deposit Amount : </b>A security deposit may be required, the amount of which will be specified in the
+                Rental Agreement. <br>
+
+                <b>5.2.  Refund : </b>The security deposit will be refunded to the renter after deducting any applicable
+                charges for damages or violations of the Rental Agreement terms.</p>
+
+            <h3>6. Responsibilities of the Renter</h3>
+            <p id="box"><b>6.1.  Use : </b>The rental item must be used only for its intended purpose and in a safe and responsible
+                manner. <br>
+
+                <b>6.2. Maintenance : </b>The renter is responsible for maintaining the rental item in good condition and
+                returning it in the same condition as received, subject to normal wear and tear. <br>
+
+                <b>6.3. Prohibitions : </b>Renter must not sublet, lend, or assign the rental item to others without prior
+                consent from the rental provider.</p>
+
+            <h3>7. Responsibilities of the Rental Provider</h3>
+            <p id="box"><b>7.1.  Maintenance :</b> The rental provider is responsible for ensuring that the rental item is in good
+                working condition at the start of the rental period. <br>
+
+                <b>7.2.  Repairs : </b>The rental provider will handle necessary repairs and maintenance during the rental
+                period unless caused by misuse or negligence by the renter.</p>
+
+            <h3>8. Liability and Insurance</h3>
+            <p id="box"><b>8.1. Liability :</b> The rental provider is not liable for any injuries, accidents, or damages that occur
+                during the rental period, except when caused by their negligence. <br>
+
+                <b>8.2. Insurance :</b> are encouraged to obtain their own insurance coverage if desired, as
+                provided insurance coverage may be limited.</p>
+
+            <h3>9. Termination of Rental</h3>
+            <p id="box">The rental provider reserves the right to terminate the rental agreement and repossess the rental
+                item if the renter violates the terms and conditions outlined here or in the Rental Agreement.</p>
+
+            <h3>10. Governing Law</h3>
+            <p id="box">These terms and conditions are governed by the laws of [Your Jurisdiction]. Any disputes will be
+                resolved in accordance with the laws of this jurisdiction.</p>
+            <br>
+            <p>If you have any questions about this privacy policy, please contact us at <a
+                    href="mailto:contact@example.com">rentkaro@gmail.com</a>. OR <span><a href="http://localhost:8080/RENT_KARO/contact_us.html" style="text-decoration: none;color: #09841B"><b>Click Here</b>.</a></span></p>
+    </body>
+    <script>
+        function goToHome() {
+            history.go(-1);
+        }
+    </script>
+
+</html>

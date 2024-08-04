@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bugs Report</title>
+        <link rel="stylesheet" type='text/css' href="CSS/BUGS_REPORT.css">
+        <link rel="icon" href="IMAGE/Logo/Small Transparent.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+              integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="feedback">
+                <div class="rating">
+                </div>
+                <div class="f1">
+                    <script>
+                        const experience = document.querySelector("experience");
+                        experience.addEventListener("keyup", e => {
+                            let scHeight = e.target.scrollHeight;
+                            experience.style.height = "auto";
+                            experience.style.heoght = `${scHeight}px`;
+                        });
+                    </script>
+               
+                    <form id="myForm" method="POST" action="http://localhost:8080/RENT_KARO/BugsReport" enctype="multipart/form-data">
+                        <fieldset>
+                            <div class="fild">
+                                <label for="name"  style="font-size: larger; color: darkblue;" class="box"> <b>Name :</b></label>
+                                <input type="text" name="db_b_name" style="width: 30ch;" id="name" placeholder="Enter Your Name..." required>
+                                <div><br></div>
+                                <label style="font-size: larger; color: darkblue;" for="experience" class="box">
+                                    <b>Explain Your Problem :</label></b>
+                                </label>
+                                <div><br></div>
+                                <textarea type="text" id="experience" name="db_b_problem"  placeholder="Write here....." required></textarea>
+                            </div>
+                            <button type="submit" id="submit">Submit</button>
+
+                        </fieldset>
+                    </form>
+
+                    <div><br><br><br><br><br><br></div>
+                </div>
+
+                <div class='wrapper'>
+                    <div class="upload">
+                        <div class="upload-wrapper">
+                            <div class="upload-img">
+                                <!-- image here -->
+                            </div>
+                            <div class="upload-info">
+                                <p>
+                                    <span class="upload-info-value">0</span> file(s) uploaded.
+                                </p>
+                            </div>
+                            <div class="upload-area">
+                                <div class="upload-area-img">
+                                    <img src="IMAGE/photo_upload.png" alt="">
+                                </div>
+                                <p class="upload-area-text">Select images or <span id="browse">browse</span>.</p>
+                            </div>
+                            <input type="file" form="myForm"  name="db_b_image" accept="image/png, image/jpeg" class="visually-hidden" id="upload-input"> 
+
+                        </div>
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.3.js"
+                integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+                <script>
+
+
+                        $(document).ready(function () {
+                            $(".upload-area").click(function () {
+
+                                $('#upload-input').trigger('click');
+                            });
+
+                            $('#upload-input').change(event => {
+                                var UploadFieldID = "upload-input";
+                                var MaxSizeInBytes = 56177215;
+                                var fld = document.getElementById(UploadFieldID);
+                                if (fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes)
+                                {
+                                    alert("The file size must be no more than " + parseInt(MaxSizeInBytes / 1024 / 1024) + "MB");
+
+                                } else {
+                                    if (event.target.files) {
+                                        let filesAmount = event.target.files.length;
+                                        $('.upload-img').html("");
+
+                                        for (let i = 0; i < filesAmount; i++) {
+                                            let reader = new FileReader();
+                                            reader.onload = function (event) {
+                                                let html = `
+                            <div class = "uploaded-img">
+                                <img src = "${event.target.result}">
+                                <button type = "button" class = "remove-btn">
+                                    <i class = "fas fa-times"></i>
+                                </button>
+                            </div>
+                        `;
+                                                $(".upload-img").append(html);
+                                            }
+                                            reader.readAsDataURL(event.target.files[i]);
+                                        }
+
+                                        $('.upload-info-value').text(filesAmount);
+                                        $('.upload-img').css('padding', "20px");
+                                    }
+                                }
+                            });
+
+                            $(window).click(function (event) {
+                                if ($(event.target).hasClass('remove-btn')) {
+                                    $(event.target).parent().remove();
+                                } else if ($(event.target).parent().hasClass('remove-btn')) {
+                                    $(event.target).parent().parent().remove();
+                                }
+                            })
+                        });
+                </script>
+                <script>
+                    function validate1() {
+                        var retingvalue;
+                        var feedback = document.getElementById("experience");
+
+                        if (document.getElementById("rating-5").checked == true) {
+                            retingvalue = "5";
+
+                        } else if (document.getElementById("rating-4").checked == true) {
+                            retingvalue = "4";
+
+                        } else if (document.getElementById("rating-3").checked == true) {
+                            retingvalue = "3";
+
+                        } else if (document.getElementById("rating-2").checked == true) {
+                            retingvalue = "2";
+
+                        } else if (document.getElementById("rating-1").checked == true) {
+                            retingvalue = "1";
+
+                        } else {
+                            retingvalue = "0";
+                        }
+
+                        window.ratingfinal = retingvalue;
+                        localStorage.setItem("ratingfinalvalue", ratingfinal);
+
+
+                        window.feedbackfinal = feedback.value;
+                        localStorage.setItem("feedbackfinalvalue", feedbackfinal);
+
+                    }
+                </script>
+            </div>
+            <div class="wrapper2">
+                <div class="upload2">
+                    <div class="upload-wrapper2">
+                        <div class="thumbnail" id="thumbnail">
+                            <!-- video here -->
+                        </div>
+                        <div class="upload-info2">
+                            <p>
+                                <span class="upload-info-value2">0</span> file(s) uploaded.
+                            </p>
+                        </div>
+                        <div class="upload-area2">
+                            <label for="upload-file">
+                                <div class="upload-area-img2">
+                                    <img src="IMAGE/video_upload.png" alt="">
+
+                                    <p class="upload-area-text2">Select videos or <span id="browse">browse</span>.</p>
+                                    <input type="file" form="myForm" name="db_b_video" id="upload-file" class="upload-file" accept="video/mp4">
+                                    </label>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    $('div').on('click', '.closeDiv', function () {
+                        $(this).prev().remove();
+                        $(this).remove();
+                        $('#upload-file').val("");
+                    });
+                    let fileDiv = document.getElementById("upload");
+                    let fileInput = document.getElementById("upload-file");
+
+                    fileInput.addEventListener("change", function (e) {
+                        var UploadFieldID = "upload-file";
+                        var MaxSizeInBytes = 56177215;
+                        var fld = document.getElementById(UploadFieldID);
+                        if (fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes)
+                        {
+                            alert("The file size must be no more than " + parseInt(MaxSizeInBytes / 1024 / 1024) + "MB");
+                        } else {
+                            let filesVAR = this.files;
+                            showThumbnail(filesVAR);
+                        }
+                    }, false);
+                    function showThumbnail(files) {
+
+                        debugger
+
+                        for (let i = 0; i < files.length; i++) {
+
+                            let file = files[i];
+                            var filex = event.target.files.length;
+                            let thumbnail = document.getElementById("thumbnail");
+                            let pDiv = document.createElement("div");
+                            let video = document.createElement("video");
+                            let div2 = document.createElement("div");
+                            pDiv.setAttribute('class', 'pDiv');
+                            thumbnail.appendChild(pDiv);
+                            video.setAttribute('class', 'imgKLIK5');
+                            pDiv.appendChild(video)
+
+                            div2.innerHTML = "Close";
+                            div2.style.backgroundColor = "red";
+                            div2.style.color = "white";
+                            div2.style.cursor = "pointer";
+                            div2.setAttribute('class', 'closeDiv');
+                            pDiv.appendChild(div2)
+
+                            video.file = file;
+                            let reader = new FileReader()
+                            reader.onload = (function (aImg) {
+                                return function (e) {
+                                    let blobURL = URL.createObjectURL(file);
+                                    aImg.src = blobURL;
+                                    aImg.setAttribute("controls", "")
+                                };
+                            }(video))
+                            let ret = reader.readAsDataURL(file);
+                            let canvas = document.createElement("canvas");
+                            ctx = canvas.getContext("2d");
+                            video.onload = function () {
+                                ctx.drawImage(video, 100, 100);
+                            }
+                        }
+                        $('.upload-info-value2').text(filex);
+                    }
+
+
+
+                </script>
+            </div>
+    </body>
+
+
+</html>
